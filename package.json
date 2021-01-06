@@ -4,7 +4,6 @@
   "description": "Yet another elapse time library.",
   "main": "./app/dist/esm/timoi.js",
   "types": "./app/dist/esm/timoi.d.ts",
-  "bin": "./app/dist/esm/cli/timoi-cli.js",
   "exports": {
     "node": {
       "import": "./app/dist/esm/timoi.js",
@@ -30,12 +29,12 @@
     "url": "git+https://github.com/maximilianMairinger/timoi.git"
   },
   "keywords": [
-  "elapse",
-  "time",
-  "timer",
-  "benchmark",
-  "clock"
-],
+    "elapse",
+    "time",
+    "timer",
+    "benchmark",
+    "clock"
+  ],
   "author": "Maximilian Mairinger",
   "license": "ISC",
   "bugs": {
@@ -57,6 +56,7 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
+    "pretty-ms": "^7.0.1",
     "req-package-json": "^2.0.0"
   }
 }
