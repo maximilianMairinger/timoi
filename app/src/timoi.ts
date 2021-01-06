@@ -7,10 +7,12 @@ function now() {
 export function timoi() {
   const start = now()
   const time = () => now() - start
-  const done = () => {console.log(pretty(time())); return done}
+  const done = () => {console.log(`Took ${str()}`); return done}
+  const str = () => pretty(time())
   done.time = time
+  done.str = str
 
-  return done as typeof done & { time: () => number }
+  return done 
 }
 
 export default timoi
