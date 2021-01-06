@@ -1,4 +1,4 @@
-import pretty from "pretty-ms"
+import * as pretty from "pretty-ms"
 
 function now() {
   return +new Date()
