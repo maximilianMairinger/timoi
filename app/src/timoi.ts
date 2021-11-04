@@ -1,8 +1,8 @@
 import pretty from "pretty-ms"
+import isBrowser from "is-browser"
 
-function now() {
-  return +new Date()
-}
+//@ts-ignore
+export const now = isBrowser ? performance.now.bind(performance) : perf_hooks.performance.now
 
 export function timoi() {
   const start = now()
