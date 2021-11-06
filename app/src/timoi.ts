@@ -2,7 +2,7 @@ import pretty from "pretty-ms"
 import isBrowser from "is-browser"
 
 //@ts-ignore
-export const now = isBrowser ? performance.now.bind(performance) : perf_hooks.performance.now
+export const now = performance.now.bind(performance)
 
 export function timoi() {
   const start = now()
