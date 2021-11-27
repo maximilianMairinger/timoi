@@ -4,10 +4,13 @@ import isBrowser from "is-browser"
 //@ts-ignore
 export const now = performance.now.bind(performance)
 
-export function timoi() {
+export function timoi(name: string = "") {
+  let callCount = 1
   const start = now()
   const time = () => now() - start
-  const done = () => {console.log(`Took ${str()}`); return done as typeof done}
+  const done = name !== "" ? 
+    () => {console.log(`${name + (callCount++ > 1 ? ("#" + (callCount-1)) : "")} took ${str()}`); return done as typeof done} : 
+    () => {console.log(`Took ${str()}`); return done as typeof done}
   const str = () => pretty(time())
   done.time = time
   done.str = str
