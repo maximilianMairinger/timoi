@@ -1,4 +1,4 @@
-import pretty from "pretty-ms"
+import * as pretty from "pretty-ms"
 import isBrowser from "is-browser"
 
 //@ts-ignore
