@@ -12,9 +12,7 @@
     "default": "./app/dist/esm/timoi.js"
   },
   "scripts": {
-    "build": "npm run buildCJS && npm run buildESM",
-    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json",
-    "buildESM": "tsc -p ./tsconfig.prod.esm.json",
+    "build": "rollup --config rollup.prod.config.js",
     "dev": "npm run devWeb",
     "devWeb": "rollup --config rollup.web.dev.config.js -w",
     "devNode": "rollup --config rollup.node.dev.config.js -w",
