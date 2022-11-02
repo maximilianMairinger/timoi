@@ -1,9 +1,6 @@
 import pretty from "pretty-ms"
-import isBrowser from "is-browser"
 
-performance = isBrowser ? performance : require("perf_hooks").performance
-
-export const now = performance.now.bind(performance)
+export const now = Date.now.bind(Date)
 
 export function timoi(name: string = "") {
   let callCount = 1
