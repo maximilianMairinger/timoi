@@ -1,7 +1,8 @@
 import pretty from "pretty-ms"
 import isBrowser from "is-browser"
 
-//@ts-ignore
+performance = isBrowser ? performance : require("perf_hooks").performance
+
 export const now = performance.now.bind(performance)
 
 export function timoi(name: string = "") {
