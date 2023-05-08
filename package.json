@@ -2,17 +2,19 @@
   "name": "timoi",
   "version": "1.1.8",
   "description": "Yet another elapse time library.",
-  "main": "./app/dist/esm/timoi.js",
+  "main": "./app/dist/esm/timoi.mjs",
   "types": "./app/dist/esm/timoi.d.ts",
   "exports": {
     "node": {
-      "import": "./app/dist/esm/timoi.js",
+      "import": "./app/dist/esm/timoi.mjs",
       "require": "./app/dist/cjs/timoi.js"
     },
-    "default": "./app/dist/esm/timoi.js"
+    "default": "./app/dist/esm/timoi.mjs"
   },
   "scripts": {
-    "build": "rollup --config rollup.prod.config.js",
+    "build": "del-cli app/dist && concurrently \"npm run buildESM\" \"npm run buildCJS\" --raw",
+    "buildESM": "tsc -p ./tsconfig.prod.esm.json && mjsify app/dist esm cjs",
+    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json",
     "dev": "npm run devWeb",
     "devWeb": "rollup --config rollup.web.dev.config.js -w",
     "devNode": "rollup --config rollup.node.dev.config.js -w",
@@ -47,7 +49,10 @@
     "@types/jest": "^26.0.15",
     "@types/node": "^13.13.4",
     "commander": "^6.2.1",
+    "concurrently": "^8.0.1",
+    "del-cli": "^5.0.0",
     "jest": "^26.6.3",
+    "mjsify": "^2.0.6",
     "rollup": "^2.18.1",
     "tslib": "2.0.0",
     "typescript": "^4.0.2",
