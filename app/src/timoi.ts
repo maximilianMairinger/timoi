@@ -13,7 +13,9 @@ export function timoi(name: string = "") {
   done.time = time
   done.str = str
 
-  return done 
+  return done as DoneFunction
 }
+
+export type DoneFunction = () => DoneFunction & {time: () => number, str: () => string}
 
 export default timoi
