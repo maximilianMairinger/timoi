@@ -1,6 +1,6 @@
 {
   "name": "timoi",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Yet another elapse time library.",
   "main": "./app/dist/esm/timoi.mjs",
   "types": "./app/dist/esm/timoi.d.ts",
