@@ -16,6 +16,6 @@ export function timoi(name: string = "") {
   return done as DoneFunction
 }
 
-export type DoneFunction = () => DoneFunction & {time: () => number, str: () => string}
+export type DoneFunction = (() => DoneFunction) & {time: () => number, str: () => string}
 
 export default timoi
