@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "is-browser": "^2.1.0",
-    "pretty-ms": "^7.0.1",
+    "pretty-ms": "^8.0.0",
     "req-package-json": "^2.0.0"
   }
 }
