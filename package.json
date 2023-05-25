@@ -14,7 +14,8 @@
   "scripts": {
     "build": "del-cli app/dist && concurrently \"npm run buildESM\" \"npm run buildCJS\" --raw",
     "buildESM": "tsc -p ./tsconfig.prod.esm.json && mjsify app/dist esm cjs",
-    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json",
+    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json && npm run buildCJS2",
+    "buildCJS2": "rollup --config rollup.cjs.prod.config.mjs",
     "dev": "npm run devWeb",
     "devWeb": "rollup --config rollup.web.dev.config.js -w",
     "devNode": "rollup --config rollup.node.dev.config.js -w",
@@ -42,25 +43,25 @@
   },
   "homepage": "https://github.com/maximilianMairinger/timoi#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^13.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^8.1.0",
-    "@rollup/plugin-typescript": "^5.0.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^13.13.4",
-    "commander": "^6.2.1",
+    "commander": "^10.0.1",
     "concurrently": "^8.0.1",
     "del-cli": "^5.0.0",
     "jest": "^26.6.3",
-    "mjsify": "^2.0.6",
-    "rollup": "^2.18.1",
+    "mjsify": "^2.0.7",
+    "rollup": "^3.23.0",
     "tslib": "2.0.0",
-    "typescript": "^4.0.2",
+    "typescript": "^5.0.4",
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
     "is-browser": "^2.1.0",
     "pretty-ms": "^8.0.0",
-    "req-package-json": "^2.0.0"
+    "req-package-json": "^2.1.4"
   }
 }
